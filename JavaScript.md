@@ -93,4 +93,90 @@ auntie.watch.callName() // 'Magic Watch'
 1. 堆疊(stack):資料結構的一種，它就像是疊盤子一樣，特性為後進先出
 2. 佇列(queue):資料結構的一種，它就像排隊一樣，特性為先進先出
 3. Web APIs 
-![image]()
+![image](https://github.com/Ccj82378/Interview_QA/blob/main/img/EventLoop.png)
+
+## function declaration(函式運算式) vs function expression(函式陳述式) 
+- function declaration 最大差異就是呼叫自定函式時可在function前
+```
+/* function declaration */
+callTest ();
+function callTest () {
+	console.log(123); // 123
+}
+
+/* function expression */
+var callTest = function() {
+console.log(123);// error: Uncaught TypeError: callTest is not a function
+}
+```
+- declaration只要被定義過後就無法從記憶體中刪除並回收，而expression則是正常的跟著變數生命週期運作，可能定義完後則直接被回收或是跟著變數的參考被移除時就結束等待GC回收
+
+## Pass by value vs by reference
+- 將舊變數(x)的值(5)複製一份，放進一塊新的記憶體，讓新變數(y)指向過去，兩者皆存放獨立資料
+```
+/* by value */
+var x = 5;
+var y = x; 
+console.log(x); // 5
+console.log(y); // 5
+
+x = 10;
+console.log(x); // 10
+sonsole.log(y); // 5
+```
+
+- 新變數會直接指向舊變數的記憶體位址，等於新舊變數共用同一個位址的資料
+```
+/* by reference */
+var p1 = [ money: 111];
+var p2 = p1;
+console.log(p1); // {money: 111}
+console.log(p1); // {money: 111}
+
+p1.money = 222;
+console.log(p1); // {money: 111}
+console.log(p1); // {money: 111}
+```
+
+- 依照變數的資料型別，決定傳遞行為是 Pass by value 或 Pass by reference
+    變數的值是原生型別 (Primitive) 時，行為是 Pass by value
+    在 JavaScript 中，原生型別 (Primitive) 包含：
+    - String
+    - Number
+    - Boolean
+    - Undefined
+    - Null 
+    當變數的值是物件型別 (Object) 時，行為是 Pass by reference，物件型別常見的例如：
+    - Array
+    - Object
+
+- Pass by Sharing ?
+雖然是物件型別 (Object) 的變數，如果是對物件變數作重新賦值，只會變更自己的值，不會連另一個變數一起變更。
+```
+/* array literals */
+var ary1 = [1, 2, 3];
+var ary2 = ary1;
+console.log(ary1); // [1, 2, 3]
+console.log(ary2); // [1, 2, 3]
+
+ary1 = [99, 100];
+console.log(ary1); // [99, 100]
+console.log(ary2); // [1, 2, 3]
+
+
+/* object literals */
+var person1 = { money: 111 };
+var person2 = person1;
+console.log(person1);  // {money: 111}
+console.log(person2);  // {money: 111}
+
+person1 = { money: 222 };
+console.log(person1);  // {money: 222}
+console.log(person2);  // {money: 111}
+```
+
+- Only by value ?
+如果 Value 指的是「資料的內容」：
+物件 (Object) 間的 obj1 = obj2 傳值，就屬於 Reference 的複製，而非 Value 的複製，因此有 Pass by value 和 Pass by reference 分別。
+如果 Value 指的是「存放在變數記憶體位址裡的值」：
+所有的 x = y 傳值都屬於 Value 的複製，因此只有 Pass by value。

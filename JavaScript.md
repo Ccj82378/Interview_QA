@@ -5,58 +5,92 @@
 
 ## let const var 差異
 - var 是全域變數，let 與 const 是區域變數
-    ``` {
-            var a = "hi";
-        }
+    ``` 
+    {
+        var a = "hi";
+    }
         console.log(a); //hi
-
-        {
-            let b = "hello";
-        }
+    {
+        let b = "hello";
+    }
         console.log(b); //error: Uncaught ReferenceError: b is not defined
-
-        {
-            let c = "aloha";
-        }
-        console.log(b); //error: Uncaught ReferenceError: c is not defined
+    {
+        let c = "aloha";
+    }
+    console.log(b); //error: Uncaught ReferenceError: c is not defined
     ```
 
 - const必須要賦值
-    ``` const a;//error: unknown: Unexpected token (1:9)
+    ``` 
+    const a;//error: unknown: Unexpected token (1:9)
     ```
 
 - let 與 const 不允許重複宣告
-    ``` var v1 = 1;
-        var v1 = 2;
-        console.log(v1); //2
+    ``` 
+    var v1 = 1;
+    var v1 = 2;
+    console.log(v1); //2
 
-        let v2 = 3;
-        let v2 = 4;
-        console.log(v2); //error: unknown: Identifier 'v2' has already been declared (2:4)
+    let v2 = 3;
+    let v2 = 4;
+    console.log(v2); //error: unknown: Identifier 'v2' has already been declared (2:4)
 
-        const v3 = 5;
-        const v3 = 6;
-        console.log(v3); //error: unknown: Identifier 'v3' has already been declared (2:6)
+    const v3 = 5;
+    const v3 = 6;
+    console.log(v3); //error: unknown: Identifier 'v3' has already been declared (2:6)
     ```
 
 ## Hoisting(var, let, const, function)
 - 對於Javascript來說，當存取一個尚未宣告的變數
-    ``` console.log(a);// error: Uncaught ReferenceError: a is not defined
+    ``` 
+    console.log(a);// error: Uncaught ReferenceError: a is not defined
     ```
 但變數宣告卻擺到最上層(邏輯上)，這就是hoisting
-    ``` console.log(a) // undefined
+    ``` 
+    console.log(a) // undefined
     var a
     ```
 - 只有「宣告」有 hoisting 提升，賦值不會
-    ``` console.log(a) // undefined, not 5
+    ``` 
+    console.log(a) // undefined, not 5
     var a = 5   
     ```
 - let, const 沒有hoisting，但有暫時性死區(TDZ)
-    ```{ 
+    ```
+    { 
         console.log(variable);
         let variable = 20;
-        }
+    }
     ```
 - 影響 
     1. 解決了必須先宣告函式才能使用，提升開發者體驗
     2. 實現函式互相遞迴
+
+## This
+- 被呼叫地當下，呼叫函式的物件
+- 隨者函數使用場合不同，this值會發生變化
+- 有new，則指向new對象
+```
+function callName() {
+  console.log(this.name);
+}
+
+var auntie = {
+  name: '漂亮阿姨',
+  callName: callName,
+  watch: {
+    name: 'Magic Watch',
+    callName: callName
+  }
+}
+
+auntie.callName() // '漂亮阿姨'
+auntie.watch.callName() // 'Magic Watch'
+```
+
+## Event Loop
+- JavaScript 是一種單線程的程式語言，簡單的說就是一次只能做一件事，而讓它做到不阻塞的背後功臣就是 Event Loop 這個機制
+1. 堆疊(stack):資料結構的一種，它就像是疊盤子一樣，特性為後進先出
+2. 佇列(queue):資料結構的一種，它就像排隊一樣，特性為先進先出
+3. Web APIs 
+![image]()

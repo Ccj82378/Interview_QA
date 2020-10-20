@@ -139,16 +139,16 @@ console.log(p1); // {money: 111}
 ```
 
 - 依照變數的資料型別，決定傳遞行為是 Pass by value 或 Pass by reference
-    變數的值是原生型別 (Primitive) 時，行為是 Pass by value
+    - 變數的值是原生型別 (Primitive) 時，行為是 Pass by value
     在 JavaScript 中，原生型別 (Primitive) 包含：
-    - String
-    - Number
-    - Boolean
-    - Undefined
-    - Null 
-    當變數的值是物件型別 (Object) 時，行為是 Pass by reference，物件型別常見的例如：
-    - Array
-    - Object
+        - String
+        - Number
+        - Boolean
+        - Undefined
+        - Null 
+    - 當變數的值是物件型別 (Object) 時，行為是 Pass by reference，物件型別常見的例如：
+        - Array
+        - Object
 
 - Pass by Sharing ?
 雖然是物件型別 (Object) 的變數，如果是對物件變數作重新賦值，只會變更自己的值，不會連另一個變數一起變更。
@@ -176,7 +176,9 @@ console.log(person2);  // {money: 111}
 ```
 
 - Only by value ?
+
 如果 Value 指的是「資料的內容」：
 物件 (Object) 間的 obj1 = obj2 傳值，就屬於 Reference 的複製，而非 Value 的複製，因此有 Pass by value 和 Pass by reference 分別。
+
 如果 Value 指的是「存放在變數記憶體位址裡的值」：
 所有的 x = y 傳值都屬於 Value 的複製，因此只有 Pass by value。

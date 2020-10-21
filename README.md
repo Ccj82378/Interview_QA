@@ -25,7 +25,7 @@
 18. Side Effects
 19. slice()、splice()、split() 
 20. Immutable
-21. JavaScript ES6
+21. Cookie
 
 ### ReactJS
 1. 特性

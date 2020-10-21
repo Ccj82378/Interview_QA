@@ -473,5 +473,12 @@
 - deep copy
     透過Immutable.js等代替身拷貝來解決性能問提
 
-## 21. JavaScript ES6
-
+## 21. Cookie
+- Cookie 是儲存在瀏覽器的一小段文字資料
+    ```
+    伺服器--- Set-Cookie header --->瀏覽器(*cookie 儲存)
+         <---- 請求回傳 cookie -----
+    
+    // *Cookie 儲存 => 由於 cookie 會被附加在每一次的 request 之中，可能會影響效能，所以如果是不需要記錄在 server 的資訊，可以改用 storage API
+    ```
+- 用途: 認證身份、追蹤使用者及廣告

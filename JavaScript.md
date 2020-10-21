@@ -1,9 +1,9 @@
 # JavaScript
 
-## 1.Scope
+## 1. Scope
 一個變數的生存範圍，一旦出了這個範圍，就無法存取到這個變數
 
-## 2.let const var 
+## 2. let const var 
 - var 是全域變數，let 與 const 是區域變數
     ``` 
     {
@@ -40,7 +40,7 @@
     console.log(v3); //error: unknown: Identifier 'v3' has already been declared (2:6)
     ```
 
-## Hoisting
+## 3. Hoisting
 - 對於Javascript來說，當存取一個尚未宣告的變數
     ``` 
     console.log(a);// error: Uncaught ReferenceError: a is not defined
@@ -66,7 +66,7 @@
     1. 解決了必須先宣告函式才能使用，提升開發者體驗
     2. 實現函式互相遞迴
 
-## This
+## 4. This
 - 被呼叫地當下，呼叫函式的物件
 - 隨者函數使用場合不同，this值會發生變化
 - 有new，則指向new對象
@@ -88,7 +88,7 @@
     auntie.watch.callName() // 'Magic Watch'
     ```
 
-## function declaration(函式運算式) vs function expression(函式陳述式) 
+## 5. function declaration(函式運算式) vs function expression(函式陳述式) 
 - function declaration 最大差異就是呼叫自定函式時可在function前
     ```
     /* function declaration */
@@ -104,7 +104,7 @@
     ```
 - declaration只要被定義過後就無法從記憶體中刪除並回收，而expression則是正常的跟著變數生命週期運作，可能定義完後則直接被回收或是跟著變數的參考被移除時就結束等待GC回收
 
-## Pass by value vs by reference
+## 6. Pass by value vs by reference
 - 將舊變數(x)的值(5)複製一份，放進一塊新的記憶體，讓新變數(y)指向過去，兩者皆存放獨立資料
     ```
     /* by value */
@@ -182,7 +182,7 @@
     - 如果 Value 指的是「存放在變數記憶體位址裡的值」：
         所有的傳值`x = y`都屬於 Value 的複製，因此只有 Pass by value。
 
-## Prototype Chain
+## 7. Prototype Chain
 - 發明人從C++引入`new`命令到JavaScript，後面接構造函數
     ```
     function DOG(name) {
@@ -227,7 +227,7 @@
     console.log(Object.prototype.__proto__) // null，原型鍊頂端
     ```
 
-## Closure
+## 8. Closure
 - JavaScript 引擎的垃圾回收機制會釋放不再使用的記憶體，但閉包為了保留函式記得和存取其語彙範疇的能力
 - 優點是能把變數隱藏在裡面讓外部存取不到
     ```
@@ -242,7 +242,7 @@
     inner();
     ```
 
-## Call, Apply, Bind
+## 9. Call, Apply, Bind
 - call：`fn.call(this, arg1, arg2..., argn)`，使用情境就在於要明確指定 this 的時候
 - apply：`fn.apply(this, [arg1, arg2..., argn])`，陣列中每個元素為參數傳進目標函式
 - bind：`fn.bind(this, arg1, arg2..., argn)`，回傳一個經過包裹後的 Function 回來，也可以把先前傳入 bind 的參數一並帶進目標函式中
@@ -262,7 +262,7 @@
 	console.log(add1(4));			// 5
     ```
 
-## Currying 
+## 10. Currying 
 - 將一個接受 n 個參數的 function，轉變成 n 個只接受一個參數的 function的過程
 - 將傳入 function 的參數，利用 closure 特性，將它們存放在另一個 function 中並當做回傳值，而這些 function 會形成一個鏈（chain），待最後參數傳入，完成運算
 - 優點是
@@ -276,7 +276,7 @@
     triple(4) === 12 // true
     ```
 
-## Event Bubbling
+## 11. Event Bubbling
     ```
     Window -> Document -> roots -> target(EventListener)  
     ====> 1.Capturing Phase =====>|    2.At Target    |
@@ -303,7 +303,7 @@
     ```
 
 
-## Synchronous vs Asynchronous
+## 12. Synchronous vs Asynchronous
 - 阻塞（blocking）代表執行時程式會卡在那一行，直到有結果為止，例如說readFileSync，要等檔案讀取完畢才能執行下一行；協調彼此的步伐，試著讓大家的腳步一致，就必須互相等待，這個就是同步
 - 非阻塞（non-blocking）代表執行時不會卡住，但執行結果不會放在回傳值，而是需要透過回呼函式（callback function）來接收結果；；
 - 阻塞的方法會同步地（synchronously）執行，而非阻塞的方法會非同步地（asynchronously）執行 - Node.js
@@ -312,7 +312,7 @@
     - 使用瀏覽器所提供的`setTimeout()`或`setInterval()`
     - 從資料庫或遠端伺服器請求資料
 
-## Promise
+## 13. Promise
 - 用在非同步處理，解決callback的可靠性不足，像是Callback Hell
 - 只會有三種狀態
     1. `pending` - 初始狀態(進行中)
@@ -360,14 +360,14 @@
         console.log(result);
     })()
     ```
-## Event Loop
+## 14. Event Loop
 - JavaScript 是一種單線程的程式語言，簡單的說就是一次只能做一件事，而讓它做到不阻塞的背後功臣就是 Event Loop 這個機制
 1. 堆疊(stack):資料結構的一種，它就像是疊盤子一樣，特性為後進先出
 2. 佇列(queue):資料結構的一種，它就像排隊一樣，特性為先進先出
 3. Web APIs 
 ![image](https://github.com/Ccj82378/Interview_QA/blob/main/img/EventLoop.png)
 
-## AJAX
+## 15. AJAX
 - Asynchronous非同步：客戶端 (client) 對伺服器端 (server) 送出 request 之後，不需要等待結果，仍可以持續處理其他事情，甚至繼續送出其他 request
 - JavaScript：使用的程式語言
 - XML：Client 與 Server 交換資料用的資料與方法，近年由於 JSON 等格式的流行，使用 Ajax 處理的資料並不限於 XML。

@@ -176,9 +176,15 @@ console.log(person2);  // {money: 111}
 ```
 
 - Only by value ?
-
-如果 Value 指的是「資料的內容」：
-物件 (Object) 間的 obj1 = obj2 傳值，就屬於 Reference 的複製，而非 Value 的複製，因此有 Pass by value 和 Pass by reference 分別。
-
-如果 Value 指的是「存放在變數記憶體位址裡的值」：
-所有的 x = y 傳值都屬於 Value 的複製，因此只有 Pass by value。
+```
+var n = 123;
+var obj = { a:"abc" };
+```
+    變數 | 資料的內容 | 存放在變數記憶體位址裡的值
+    --- | --- | ---
+    n | `123` | `123`
+    obj | {a:"abc"} | 類似 0x0001 這樣的記憶體位址
+    - 如果 Value 指的是「資料的內容」：
+        物件(object)間`obj1 = obj2`傳值，屬於Reference，而非 Value 
+    - 如果 Value 指的是「存放在變數記憶體位址裡的值」：
+        所有的傳值`x = y`都屬於 Value 的複製，因此只有 Pass by value。

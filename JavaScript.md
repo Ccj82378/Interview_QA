@@ -108,7 +108,7 @@
     var callTest = function() {
     console.log(123);// error: Uncaught TypeError: callTest is not a function
     }
-```
+    ```
 - declaration只要被定義過後就無法從記憶體中刪除並回收，而expression則是正常的跟著變數生命週期運作，可能定義完後則直接被回收或是跟著變數的參考被移除時就結束等待GC回收
 
 ## Pass by value vs by reference

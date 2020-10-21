@@ -17,11 +17,11 @@
 5.	Component PropType 防呆機制、在 JavaScript 裡寫 CSS：Inline Style
 
 ## 前端庫差別
-    * | React | Angular| Vue |
+    語言| React | Angular| Vue |
     --- | --- | --- | ---|
     DOM | V | R | V
     數據綁定 | 單向 | 雙向 | 雙向
-    體系結構 | M"V"C | MVC | MVVP
+    體系結構 | M**V**C | MVC | MVVP
     語言 | JS ES6 | JS ES6 | Typescript
 
 ## Life Cycle

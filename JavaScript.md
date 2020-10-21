@@ -1,9 +1,9 @@
 # JavaScript
 
-## Scope
+## 1.Scope
 一個變數的生存範圍，一旦出了這個範圍，就無法存取到這個變數
 
-## let const var 
+## 2.let const var 
 - var 是全域變數，let 與 const 是區域變數
     ``` 
     {

@@ -88,7 +88,7 @@
     auntie.watch.callName() // 'Magic Watch'
     ```
 
-## 5. function declaration(函式運算式) vs function expression(函式陳述式) 
+## 5. Function Declaration(函式運算式) vs Function Expression(函式陳述式) 
 - function declaration 最大差異就是呼叫自定函式時可在function前
     ```
     /* function declaration */
@@ -374,14 +374,14 @@
 - JavaScript：使用的程式語言
 - XML：Client 與 Server 交換資料用的資料與方法，近年由於 JSON 等格式的流行，使用 Ajax 處理的資料並不限於 XML。
 
-## Higher-order Function
+## 16. Higher-order Function
 - 回傳函數的函數，或是接受函數作為參數的函數
     ```
     /* Curring */
     const add = x => y => z => x + y + z
     add(1)(2)(3) // 6
     ```
-## Pure Function
+## 17. Pure Function
 - 將相同的輸入丟入，永遠都會回傳相同的輸出
 - 沒有任何顯著的副作用
 - 優點: 
@@ -409,11 +409,11 @@
     //=> [] 被改變了
     ```
 
-## Side Effects
+## 18. Side Effects
 - 副作用是在計算結果的過程中，系統狀態的一種改變，或是外部世界可觀察的交互作用
 - 透過pure function、作用域(如果副作用來自自由變數)減少副作用
 
-## slice()、splice()、split() 
+## 19. slice()、splice()、split() 
 - slice(): 複製開始與結束點（結束點不算）中的內容
     ```
     var fruits = ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango'];
@@ -452,7 +452,7 @@
     //splits3 contains ["How", "are", "you"]
     ```
 
-## Immutable
+## 20. Immutable
 - 基本型別如 number, string, boolean, null, undefined 具有值不可變性
 - `const`常數宣告不變，但陣列值還是改變了
     ```
@@ -473,5 +473,5 @@
 - deep copy
     透過Immutable.js等代替身拷貝來解決性能問提
 
-## JavaScript ES6
+## 21. JavaScript ES6
 

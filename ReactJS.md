@@ -17,6 +17,7 @@
 5.	Component PropType 防呆機制、在 JavaScript 裡寫 CSS：Inline Style
 
 ## 前端庫差別
+
     語言| React | Angular| Vue |
     --- | --- | --- | ---|
     DOM | V | R | V

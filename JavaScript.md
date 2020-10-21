@@ -263,8 +263,45 @@
     ```
 
 ## Currying 
+- 將一個接受 n 個參數的 function，轉變成 n 個只接受一個參數的 function的過程
+- 將傳入 function 的參數，利用 closure 特性，將它們存放在另一個 function 中並當做回傳值，而這些 function 會形成一個鏈（chain），待最後參數傳入，完成運算
+- 優點是
+    1. 簡化參數的處理，基本上是一次處理一個參數，藉以提高程式的彈性和可讀性
+    2. 將程式碼依功能拆解成更細的片段，有助於重複利用
+    ```
+    multiply = (x, y) => x * y;
+    multiply(3, 5) === 15 // true
+
+    triple = (m) => multiply(3, m)
+    triple(4) === 12 // true
+    ```
 
 ## Event Bubbling
+    ```
+    Window -> Document -> roots -> target(EventListener)  
+    ====> 1.Capturing Phase =====>|    2.At Target    |
+    <==== 3.Bubbing Phase <======= 
+    ```
+- 在`.addEventListener()`加上第三個參數
+    - true：Capturing Phase
+    - false：Bubbing Phase
+    - 若不寫第三個參數，則預設為 false
+- `e.stopPropagation()` 阻止事件傳遞，包含向上向下
+-  Event delegation 事件代理
+    ```
+    /* 利用事件傳遞的機制，把 button 的 eventListener 綁定在上層的 .outer 元素上 */
+    <div class="outer"> 
+        <button class="btn_add" >add</button>
+        <button class="btn" data-value="1">1</button>
+        <button class="btn" data-value="2">2</button>
+    </div>
+    <script>
+        document.querySelector('.outer').addEventListener('click',  function (e) {
+        console.log(e.target.getAttribute('data-value'));
+    })
+    </script>
+    ```
+
 
 ## Synchronous vs Asynchronous
 - 阻塞（blocking）代表執行時程式會卡在那一行，直到有結果為止，例如說readFileSync，要等檔案讀取完畢才能執行下一行；協調彼此的步伐，試著讓大家的腳步一致，就必須互相等待，這個就是同步

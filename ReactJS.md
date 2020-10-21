@@ -1,20 +1,20 @@
 # ReactJS
 
 ## 1. 特性
-    1. 基於元件（Component）化思考
-    2. 用 JSX ( 擴充、語法糖 )進行宣告式UI 設計
-    3. 使用 Virtual DOM：
-        從 MVC 架構追溯起，主要都是為了解決前端頁面呈現、資料更動、使用者操作這三種狀態交互作用產生的複雜性
-        註MVC
-        優點：生命周期成本低、可維護性高
-        缺點：內存浪費嚴重、循環依賴性，組件模型圍繞 models 和 views 進行創建
+1. 基於元件（Component）化思考
+2. 用 JSX ( 擴充、語法糖 )進行宣告式UI 設計
+3. 使用 Virtual DOM：
+    從 MVC 架構追溯起，主要都是為了解決前端頁面呈現、資料更動、使用者操作這三種狀態交互作用產生的複雜性
+    註MVC
+    優點：生命周期成本低、可維護性高
+    缺點：內存浪費嚴重、循環依賴性，組件模型圍繞 models 和 views 進行創建
 
-        React(View)希望在資料更新時，能夠直接重新渲染頁面，不用主動去探究是數據的哪部份發生變化，要對應去更新頁面哪一部分的 DOM。但頁面重新渲染的成本可是更高，所以才需要 Virtual DOM 作為緩衝，透過資料更新後，重新繪製 Virtual DOM，與實體 DOM 進行 Diff，最後再把差異部分 Patch 上去，這不僅修正了重新渲染的成本問題，也降低了 data 與 view 交互更新的複雜度，提高了 developer 的開發體驗。
-    4. 單向資料流（Unidirectional Data Flow）、一律重繪：
-    - Props都是由父元素所傳進來，子元素不能更改
-    - State根據使用者互動而產生的不同狀態，主要是透過 setState() 方法進行修改
-    - 當 React 發現 props 或是 state 更新時，就會重繪整個 UI
-    5. Component PropType 防呆機制、在 JavaScript 裡寫 CSS：Inline Style
+    React(View)希望在資料更新時，能夠直接重新渲染頁面，不用主動去探究是數據的哪部份發生變化，要對應去更新頁面哪一部分的 DOM。但頁面重新渲染的成本可是更高，所以才需要 Virtual DOM 作為緩衝，透過資料更新後，重新繪製 Virtual DOM，與實體 DOM 進行 Diff，最後再把差異部分 Patch 上去，這不僅修正了重新渲染的成本問題，也降低了 data 與 view 交互更新的複雜度，提高了 developer 的開發體驗。
+4. 單向資料流（Unidirectional Data Flow）、一律重繪：
+- Props都是由父元素所傳進來，子元素不能更改
+- State根據使用者互動而產生的不同狀態，主要是透過 setState() 方法進行修改
+- 當 React 發現 props 或是 state 更新時，就會重繪整個 UI
+5. Component PropType 防呆機制、在 JavaScript 裡寫 CSS：Inline Style
 
 ## 2. 前端庫差別
 

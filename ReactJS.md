@@ -73,6 +73,6 @@
     - State 是唯讀的：改變 state 的唯一的方式是發出一個 action，也就是一個描述發生什麼事的物件。
     - 變更被寫成 pure function：要指定 state tree 如何藉由 action 來轉變，你必須撰寫 pure reducer。
 
-# 7. React Router
+## 7. React Router
 - React Router是React的路由解决方案，它可以讓UI可以與URL同步
 - Router 用於定義多個路由，當用戶定義特定的 URL 時，如果此 URL 與 Router 內定義的任何 “路由” 的路徑匹配，則用戶將重定向到該特定路由所以基本上我們需要在自己的應用中添加一個 Router。

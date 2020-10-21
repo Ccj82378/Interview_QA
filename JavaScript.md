@@ -183,8 +183,55 @@
     變數 | 資料的內容 | 存放在變數記憶體位址裡的值
     --- | --- | ---
     n | `123` | `123`
-    obj | {a:"abc"} | 類似 0x0001 這樣的記憶體位址
+    obj | { a:"abc" } | 類似 0x0001 這樣的記憶體位址
     - 如果 Value 指的是「資料的內容」：
         物件(object)間`obj1 = obj2`傳值，屬於Reference，而非 Value 
     - 如果 Value 指的是「存放在變數記憶體位址裡的值」：
         所有的傳值`x = y`都屬於 Value 的複製，因此只有 Pass by value。
+
+## 什麼是原型鍊（prototype chain）
+- 發明人從C++引入`new`命令到JavaScript，後面接構造函數
+    ```
+    function DOG(name) {
+        this.name = name;
+    }
+    var dogA = new DOG('來福');
+    console.log(dogA.name); // 來福
+    ```
+- `new`的缺點，用構造函數產生實例對象，無法共享屬性和方法，資源也會浪費
+    ```
+    function DOG(name){
+        this.name = name;
+        this.species = '犬科';
+    }
+
+    var dogA = new DOG('來福');
+    var dogB = new DOG('Lucky');
+
+    dogA.species = '猫科';
+    console.log(dogB.species); // 犬科
+    ```
+- 引入`prototype`屬性，最後`null`為原型鍊頂端
+    ```
+    function DOG(name) {
+        this.name = name;
+    }
+    DOG.prototype = { species : '犬科' };
+
+    var dogA = new DOG('來福');
+    var dogB = new DOG('Lucky');
+
+    console.log(dogA.species); // 犬科
+    console.log(dogB.species); // 犬科
+
+    DOG.prototype.species = '狗類';
+
+    console.log(dogA.species); // 狗類
+    console.log(dogB.species); // 狗類
+
+    console.log(dogA.__proto__) // { species : '狗類' }
+    console.log(DOG.prototype.__proto__ === Object.prototype)  // true
+    console.log(Object.prototype.__proto__) // null，原型鍊頂端
+    ```
+
+## 

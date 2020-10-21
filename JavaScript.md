@@ -129,6 +129,7 @@
     p1.money = 222;
     console.log(p1); // {money: 111}
     console.log(p1); // {money: 111}
+    /* Shadow Copy */
     ```
 
 - 依照變數的資料型別，決定傳遞行為是 Pass by value 或 Pass by reference
@@ -228,6 +229,7 @@
     ```
 
 ## 8. Closure
+- 當一個函數可以記住並存取到不同作用域的變數，甚至這個函數在不同 scope 被執行
 - JavaScript 引擎的垃圾回收機制會釋放不再使用的記憶體，但閉包為了保留函式記得和存取其語彙範疇的能力
 - 優點是能把變數隱藏在裡面讓外部存取不到
     ```
@@ -371,4 +373,105 @@
 - Asynchronous非同步：客戶端 (client) 對伺服器端 (server) 送出 request 之後，不需要等待結果，仍可以持續處理其他事情，甚至繼續送出其他 request
 - JavaScript：使用的程式語言
 - XML：Client 與 Server 交換資料用的資料與方法，近年由於 JSON 等格式的流行，使用 Ajax 處理的資料並不限於 XML。
+
+## Higher-order Function
+- 回傳函數的函數，或是接受函數作為參數的函數
+    ```
+    /* Curring */
+    const add = x => y => z => x + y + z
+    add(1)(2)(3) // 6
+    ```
+## Pure Function
+- 將相同的輸入丟入，永遠都會回傳相同的輸出
+- 沒有任何顯著的副作用
+- 優點: 
+    - 程式碼閱讀性提高
+    - 較為封閉與固定，可重覆使用性高
+    - 輸出輸入單純，易於測試、除錯
+    - 因為輸入->輸出結果固定，可以快取或作記憶處理，在高花費的應用中可作提高執行效率的機制
+    ```
+    var xs = [1, 2, 3, 4, 5];
+
+    // pure
+    xs.slice(0, 3);
+    //=> [1, 2, 3]
+    xs.slice(0, 3);
+    //=> [1, 2, 3]
+    xs.slice(0, 3);
+    //=> [1, 2, 3]
+
+    // impure
+    xs.splice(0, 3);
+    //=> [1, 2, 3]
+    xs.splice(0, 3);
+    //=> [4, 5]
+    xs.splice(0, 3);
+    //=> [] 被改變了
+    ```
+
+## Side Effects
+- 副作用是在計算結果的過程中，系統狀態的一種改變，或是外部世界可觀察的交互作用
+- 透過pure function、作用域(如果副作用來自自由變數)減少副作用
+
+## slice()、splice()、split() 
+- slice(): 複製開始與結束點（結束點不算）中的內容
+    ```
+    var fruits = ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango'];
+    var fruit1 = fruits.slice(1);
+    var fruit2 = fruits.slice(1, 3);
+    var fruit3 = fruits.slice(-3); // 負數代表從後面開始算起，-1為倒數第一個元素
+
+    // fruits contains ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango']
+    // fruit1 contains ['Orange', 'Lemon', 'Apple', 'Mango']
+    // fruit2 contains ['Orange', 'Lemon']
+    // fruit3 contains ["Lemon", "Apple", "Mango"]
+    ```
+- splice(): 從Array中添加/刪除項目，回傳被刪除的項目
+    ```
+    var myFish1 = ['angel', 'clown', 'drum', 'sturgeon'];
+    var removed1 = myFish1.splice(2, 1, 'trumpet');
+
+    // myFish1 is ["angel", "clown", "trumpet", "sturgeon"]
+    // removed1 is ["drum"]
+
+    var myFish2 = ['angel', 'clown', 'drum', 'sturgeon'];
+    var removed2 = myFish2.splice(-2, 2, 'trumpet');
+
+    // myFish2 is ["angel", "clown", "trumpet"]
+    // removed2 is ["drum", "sturgeon"]
+    ```
+- split() 分割字串成字串組
+    ```
+    var str="How are you ?"
+    var splits1 = str.split(" ");
+    var splits2 = str.split("");
+    var splits3 = str.split(" ",3);
+
+    //splits1 contains ["How", "are", "you", "?"]
+    //splits2 contains ["H", "o", "w", " ", "a", "r", "e", " ", "y", "o", "u", " ", "?"]
+    //splits3 contains ["How", "are", "you"]
+    ```
+
+## Immutable
+- 基本型別如 number, string, boolean, null, undefined 具有值不可變性
+- `const`常數宣告不變，但陣列值還是改變了
+    ```
+    const person = {player: {name: 'Messi'}};
+    const person1 = person;
+    console.log(person, person1); // [ { name: 'Messi' } ] [ { name: 'Messi' } ]
+    person.player.name = 'Kane';
+    console.log(person, person1); // [ { name: 'Kane' } ] [ { name: 'Kane' } ] 產生副作用
+    ```
+    運用shadow copy，在ES6中使用`object.assign`或者`...`
+    ```
+    const person = [{name: 'Messi'}];
+    const person1 = person.map(item =>
+    ({...item, name: 'Kane'})
+    )
+    console.log(person, person1); // [{name: 'Messi'}] [{name: 'Kane'}]
+    ```
+- deep copy
+    透過Immutable.js等代替身拷貝來解決性能問提
+
+## JavaScript ES6
 

@@ -6,20 +6,25 @@
 
 ### JavaScript
 1. Scope
-2. let,const,var
+2. let、const、var
 3. Hoisting  
 4. This  
 5. Function Declaration vs Function Expression  
 6. Pass by value vs by reference  
 7. Prototype Chain  
 8. Closure  
-9. Call,Apply,Bind  
+9. Call、Apply、Bind  
 10. Currying   
 11. EventBubbling  
 12. Synchronous_Asynchronous  
 13. Promise  
 14. EventLoop  
 15. AJAX  
+16. Higher-order Fuction
+17. Pure Function
+18. Side Effects
+19. slice()、splice()、split() 
+. JavaScript ES6
 
 ### ReactJS
 1. 特性

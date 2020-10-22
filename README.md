@@ -4,8 +4,9 @@
 ## Menu 
 
 ### HTML、CSS
-1. Pseudo classes
-2. CSS Preprocessor
+1. Display:inline、block、inline-block
+2. Pseudo classes
+3. CSS Preprocessor
 
 ### JavaScript
 1. Scope

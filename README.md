@@ -1,8 +1,12 @@
 # Interview_Q&A
 - 彙整、簡述製作作品時所了解到的概念及問題
-- HTML, CSS, JavaScript
+- HTML_CSS, JavaScript
 - ReactJS
 ## Menu 
+
+### HTML、CSS
+1. Pseudo classes
+2. CSS Preprocessor
 
 ### JavaScript
 1. Scope
@@ -30,7 +34,7 @@
 ### ReactJS
 1. 特性
 2. React,Angular,Vue
-3. Life Cycle
+3. Life Cycle 
 4. Key
 5. Refs
 6. Flux & Redux

@@ -4,7 +4,7 @@
 - `block`：塊級元素默認填滿父級元素內容區域，旁邊不能有其他元素，ex `<div>`, `<p>`, `<ul>` 
 - `inline`：行內元素在一行文本內生成元素框，不打斷所在的行，ex `<span>`, `<img>`, `<a>`
 - `inline-block`：屬性是行內屬性，可以設置width和height或者我們可以理解成一個塊級元素，不用換行
-![image]()
+![image](https://github.com/Ccj82378/Interview_QA/blob/main/img/css-display-block-vs-inline-block.png)
 
 ## Pseudo classes
 - 偽類: 能夠在特定動作時改變 DOM 的 CSS 樣式，ex `:hover`, `:focus`

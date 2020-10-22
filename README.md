@@ -1,7 +1,6 @@
 # Interview_Q&A
 - 彙整、簡述製作作品時所了解到的概念及問題
-- HTML_CSS, JavaScript
-- ReactJS
+- HTML_CSS, JavaScript, JavaScript Design Pattern, ReactJS 
 ## Menu 
 
 ### HTML、CSS
@@ -30,6 +29,9 @@
 19. slice()、splice()、split() 
 20. Immutable
 21. Cookie
+
+## JavaScript Design Pattern
+
 
 ### ReactJS
 1. 特性

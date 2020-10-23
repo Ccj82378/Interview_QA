@@ -32,7 +32,7 @@
 21. Cookie
 
 ## JavaScript Design Pattern
-
+1. MVC, MVP, MVVM
 
 ### ReactJS
 1. 特性

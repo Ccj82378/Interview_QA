@@ -45,7 +45,7 @@
     ``` 
     console.log(a);// error: Uncaught ReferenceError: a is not defined
     ```
-但變數宣告卻擺到最上層(邏輯上)，這就是hoisting
+    但變數宣告卻擺到最上層(邏輯上)，這就是hoisting
     ``` 
     console.log(a) // undefined
     var a

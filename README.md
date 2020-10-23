@@ -31,8 +31,9 @@
 20. Immutable
 21. Cookie
 
-## JavaScript Design Pattern
+### JavaScript Design Pattern
 1. MVC, MVP, MVVM
+2. 
 
 ### ReactJS
 1. 特性

@@ -43,7 +43,7 @@
 ## 3. Hoisting
 - 對於Javascript來說，當存取一個尚未宣告的變數
     ``` 
-    console.log(a);// error: Uncaught ReferenceError: a is not defined
+    console.log(a); // error: Uncaught ReferenceError: a is not defined
     ```
     但變數宣告卻擺到最上層(邏輯上)，這就是hoisting
     ``` 
@@ -59,7 +59,7 @@
     ```
     { 
         console.log(variable);
-        let variable = 20;
+        let variable = 20; // error: Uncaught ReferenceError: Cannot access 'variable' before initialization
     }
     ```
 - 影響 

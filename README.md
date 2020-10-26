@@ -1,12 +1,15 @@
 # Interview_Q&A
 - 彙整、簡述製作作品時所了解到的概念及問題
-- HTML_CSS, JavaScript, JavaScript Design Pattern, ReactJS 
+- HTML_CSS, JavaScript, JavaScript Pattern, ReactJS 
 ## Menu 
 
 ### HTML、CSS
 1. Display:inline、block、inline-block
 2. Pseudo classes
 3. CSS Preprocessor
+4. Position
+5. Overflow
+6. CSS Specificity
 
 ### JavaScript
 1. Scope
@@ -31,7 +34,7 @@
 20. Immutable
 21. Cookie
 
-### JavaScript Design Pattern
+### JavaScript Pattern
 1. MVC, MVP, MVVM
 2. 
 

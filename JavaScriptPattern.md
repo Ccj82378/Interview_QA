@@ -1,4 +1,4 @@
-# JavaScript Design Pattern
+# JavaScript Pattern
 
 ## 1. MVC, MVP, MVVM
 - The difference is in way how data from model layer ends up in the view instances.
@@ -18,3 +18,27 @@
     - view 通常會需要使用到 XAML 標記宣告語言來定義，而 XAML 僅僅提供了使用者介面的宣告，並無法提供任何處理邏輯
     - viewModel 扮演這存取資料 model 的責任，並且透過了資料繫結技術將資料提供給檢視
 ![image](https://github.com/Ccj82378/LearningNote/blob/main/img/MVC_MPV_MVVM.png)
+
+## 2. Singleton Pattern
+- Constructor Pattern
+    - 以類別為基底的創建型模式，一個特殊的function可以用來實例化新物件中所定義的方法與屬性
+    ```
+    class person {
+        constructor(name, age) {
+            this._name = name;
+            this._age = age;
+
+            this.getDetails = function() {
+                return `${this._name} is ${this._age} years old.`
+            };
+        }
+    }
+
+    const A = new person('Mike', '50');
+    console.log(A.getDetails());  // "Mike is 50 years old."
+    ```
+- Factory Pattern
+    - 另一種類別為基礎的創建型模式，沒有明確要求使用構造函數，而是提供用於創建對象的通用接口
+    ```
+    
+    ```

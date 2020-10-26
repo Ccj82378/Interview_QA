@@ -1,7 +1,7 @@
 # HTML、CSS
 
 ## 1. Display:inline、block、inline-block
-- `block`：塊級元素默認填滿父級元素內容區域，旁邊不能有其他元素，ex `<div>`, `<p>`, `<ul>` 
+- `block`：塊級元素，前後換行，ex `<div>`, `<p>`, `<ul>` 
 - `inline`：行內元素在一行文本內生成元素框，不打斷所在的行，ex `<span>`, `<img>`, `<a>`
 - `inline-block`：屬性是行內屬性，可以設置width和height或者我們可以理解成一個塊級元素，不用換行
 ![image](https://github.com/Ccj82378/Interview_QA/blob/main/img/css-display-block-vs-inline-block.png)
@@ -29,3 +29,13 @@
     `position: fixed` 會相對於瀏覽器視窗來定位，即便頁面捲動，還是會固定在相同的位置
 - sticky:
     根據滾動位置從 `relative` 到 `fixed` ，註:Internet Explorer、Edge 15及更早期版本不支援
+
+## 5. Overflow
+- 處理 block box 內容溢出時的顯示狀態，顯示在 box 外的內容是否裁減，以及裁剪後是否提供滑動顯示
+    - visible：內容沒有被裁切，也就是可以在 block box 外呈現
+    - hidden：內容被裁切，並且不應提供捲動 UI 來查看裁切區域之外的內容
+    - scroll：內容已被裁切，並且如果 UA 使用螢幕上可見的捲動機制 (例如：scroll bar 或 panner)，則無論該內容是否有內容，都應在 box 上顯示該機制被裁切。這避免了滾動條在動態環境中出現和消失的任何問題。指定此值且目標 medium 為 print 時，可能會列印出 overflow 的內容。在 table box 上使用時，此值與 visible 具有相同的含義
+    - auto：此值的行為取決於 UA，但應導致為 overflow 的 box 提供捲動機制。在 table box 上使用時，此值與 visible 具有相同的含義
+
+## 6. CSS Specificity
+- 行內套用 > 內部載入 > 外部載入 > 用戶設置 > 瀏覽器預設

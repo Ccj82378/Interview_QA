@@ -36,7 +36,7 @@
 
 ### JavaScript Pattern
 1. MVC, MVP, MVVM
-2. 
+2. Singleton Pattern
 
 ### ReactJS
 1. 特性

@@ -482,3 +482,13 @@
     // *Cookie 儲存 => 由於 cookie 會被附加在每一次的 request 之中，可能會影響效能，所以如果是不需要記錄在 server 的資訊，可以改用 storage API
     ```
 - 用途: 認證身份、追蹤使用者及廣告
+
+## 22. == vs ===
+- `==`會自動做型別轉換
+    ```
+    var a = "14";
+    var b = 14;
+    console.log(a == b); // true
+    console.log(a === b); // false
+    ```
+- 因為型別不同而有所差異，例如 Array、Object、 class，他們比較的方式是兩個變數是否指向同一個 reference

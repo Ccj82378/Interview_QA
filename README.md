@@ -33,6 +33,7 @@
 19. slice()、splice()、split() 
 20. Immutable
 21. Cookie
+22. == vs ===
 
 ### JavaScript Pattern
 1. MVC, MVP, MVVM

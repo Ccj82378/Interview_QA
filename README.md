@@ -26,14 +26,12 @@
 12. Synchronous_Asynchronous  
 13. Promise  
 14. EventLoop  
-15. AJAX  
+15. == vs ===
 16. Higher-order Fuction
 17. Pure Function
 18. Side Effects
 19. slice()、splice()、split() 
 20. Immutable
-21. Cookie
-22. == vs ===
 
 ### JavaScript Pattern
 1. MVC, MVP, MVVM
@@ -47,3 +45,8 @@
 5. Refs
 6. Flux & Redux
 7. React Router
+
+### Other
+1. AJAX
+2. Cookie
+3. Single Page Application

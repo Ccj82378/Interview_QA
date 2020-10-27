@@ -369,10 +369,15 @@
 3. Web APIs 
 ![image](https://github.com/Ccj82378/Interview_QA/blob/main/img/EventLoop.png)
 
-## 15. AJAX
-- Asynchronous非同步：客戶端 (client) 對伺服器端 (server) 送出 request 之後，不需要等待結果，仍可以持續處理其他事情，甚至繼續送出其他 request
-- JavaScript：使用的程式語言
-- XML：Client 與 Server 交換資料用的資料與方法，近年由於 JSON 等格式的流行，使用 Ajax 處理的資料並不限於 XML。
+## 15. == vs ===
+- `==`會自動做型別轉換
+    ```
+    var a = "14";
+    var b = 14;
+    console.log(a == b); // true
+    console.log(a === b); // false
+    ```
+- 因為型別不同而有所差異，例如 Array、Object、 class，他們比較的方式是兩個變數是否指向同一個 reference
 
 ## 16. Higher-order Function
 - 回傳函數的函數，或是接受函數作為參數的函數
@@ -473,22 +478,4 @@
 - deep copy
     透過Immutable.js等代替身拷貝來解決性能問提
 
-## 21. Cookie
-- Cookie 是儲存在瀏覽器的一小段文字資料
-    ```
-    伺服器--- Set-Cookie header --->瀏覽器(*cookie 儲存)
-         <---- 請求回傳 cookie -----
-    
-    // *Cookie 儲存 => 由於 cookie 會被附加在每一次的 request 之中，可能會影響效能，所以如果是不需要記錄在 server 的資訊，可以改用 storage API
-    ```
-- 用途: 認證身份、追蹤使用者及廣告
 
-## 22. == vs ===
-- `==`會自動做型別轉換
-    ```
-    var a = "14";
-    var b = 14;
-    console.log(a == b); // true
-    console.log(a === b); // false
-    ```
-- 因為型別不同而有所差異，例如 Array、Object、 class，他們比較的方式是兩個變數是否指向同一個 reference

@@ -19,26 +19,29 @@
     - viewModel 扮演這存取資料 model 的責任，並且透過了資料繫結技術將資料提供給檢視
 ![image](https://github.com/Ccj82378/LearningNote/blob/main/img/MVC_MPV_MVVM.png)
 
-## 2. Singleton Pattern
+## 2. Creational Patterns
 - Constructor Pattern
-    - 以類別為基底的創建型模式，一個特殊的function可以用來實例化新物件中所定義的方法與屬性
-    ```
-    class person {
-        constructor(name, age) {
-            this._name = name;
-            this._age = age;
+以類別為基底的創建型模式，一個特殊的function可以用來實例化新物件中所定義的方法與屬性
+```
+class person {
+    constructor(name, age) {
+        this._name = name;
+        this._age = age;
 
-            this.getDetails = function() {
-                return `${this._name} is ${this._age} years old.`
-            };
-        }
+        this.getDetails = function() {
+            return `${this._name} is ${this._age} years old.`
+        };
     }
+}
 
-    const A = new person('Mike', '50');
-    console.log(A.getDetails());  // "Mike is 50 years old."
-    ```
-- Factory Pattern
-    - 另一種類別為基礎的創建型模式，沒有明確要求使用構造函數，而是提供用於創建對象的通用接口
-    ```
-    
-    ```
+const A = new person('Mike', '50');
+console.log(A.getDetails());  // "Mike is 50 years old."
+```
+1. Factory Pattern
+- 另一種類別為基礎的創建型模式，沒有明確要求使用構造函數，而是提供用於創建對象的通用接口
+```
+
+```
+## 3. Structural Patterns
+
+## 4. Behavioral Patterns

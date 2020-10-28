@@ -35,7 +35,11 @@
 
 ### JavaScript Pattern
 1. MVC, MVP, MVVM
-2. Singleton Pattern
+2. Creational Patterns
+    - Constructor Pattern
+    - Factory Pattern
+3. Structural Patterns
+4. Behavioral Patterns
 
 ### ReactJS
 1. 特性

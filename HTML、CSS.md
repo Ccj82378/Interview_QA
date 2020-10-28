@@ -39,3 +39,5 @@
 
 ## 6. CSS Specificity
 - 行內套用 > 內部載入 > 外部載入 > 用戶設置 > 瀏覽器預設
+- !important > element > id > class > tag
+- 先看權重，再看先後順序

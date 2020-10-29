@@ -51,7 +51,7 @@
 - Decorator Pattern 
 - Façade Pattern
 - Flyweight Pattern 
-- Proxy Pattern)
+- Proxy Pattern
 ## 4. Behavioral Patterns - 改變使用物件的行為，在使用某功能時所呼叫的方法不同
 - Iterator Pattern
 - Template Pattern

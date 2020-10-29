@@ -41,9 +41,24 @@
 2. Creational Patterns
     - Constructor Pattern
     - Factory Pattern
+    - Singleton Pattern
+    - Prototype Pattern
 3. Structural Patterns
+    - Adapter Pattern 
+    - Composite Pattern
+    - Decorator Pattern 
+    - Façade Pattern
+    - Flyweight Pattern 
+    - Proxy Pattern
 4. Behavioral Patterns
-
+    - Iterator Pattern
+    - Template Pattern
+    - Chain of Responsibility Pattern
+    - Command Pattern 
+    - Mediator Pattern
+    - Observer Pattern
+    - State Pattern
+    - Strategy Pattern
 ## ReactJS
 1. 特性
 2. React,Angular,Vue

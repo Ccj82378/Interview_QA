@@ -24,24 +24,44 @@
 - Constructor Pattern
     以類別為基底的創建型模式，一個特殊的function可以用來實例化新物件中所定義的方法與屬性
     ```
-    class person {
-        constructor(name, age) {
-            this._name = name;
-            this._age = age;
-
-            this.getDetails = function() {
-                return `${this._name} is ${this._age} years old.`
+      class Factory {
+        constructor() {
+            this.create = function(type) {
+            let vehicle;
+            if (type === 'explorer' || type === 'ranger') vehicle = new Ford();
+            else if (type === 'hellcat') vehicle = new Dodge();
+            vehicle.roll = () => {
+                return `The ${this._type} is rolling.`;
+            };
+            return vehicle;
             };
         }
-    }
+        }
+    class Ford {
+        constructor() {
+            this._type = 'ford';
+            this.buy= () => {
+            return 'You buy the ford.';
+            };
+        }
+        }
+    class Dodge {
+        constructor() {
+            this._type = 'dodge';
+            this.sell = () => {
+            return 'You sell the Dodge.';
+            };
+        }
+        }
+    // creating objects
+    const factory = new Factory();
+    const myFord = factory.create('explorer');
+    const myDodge = factory.create('hellcat');
 
-    const A = new person('Mike', '50');
-    console.log(A.getDetails());  // "Mike is 50 years old."
-    ```
-- Factory Pattern
-    提供用於創建對象的通用接口，提供子類決定實例哪個工廠，沒有明確要求使用構造函數
-    ```
-    
+    console.log(myFord.roll()); // "The ford is rolling."
+    console.log(myDodge.roll()); // "The dodge is rolling."
+    console.log(myFord.buy()); // "You buy the ford."
+    console.log(myDodge.sell()); // "You sell the Dodge."
     ```
 - Singleton Pattern
 - Prototype Pattern

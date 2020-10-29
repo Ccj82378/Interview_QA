@@ -59,6 +59,7 @@
     - Observer Pattern
     - State Pattern
     - Strategy Pattern
+    
 ## ReactJS
 1. 特性
 2. React,Angular,Vue

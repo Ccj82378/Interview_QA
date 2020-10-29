@@ -11,6 +11,8 @@
     1. controller 處理使用者的互動與處理資料模型物件，並也針對 model 物件更新
     2. view 顯示資料
     3. model 取得 view 所要顯示的內容
+    - 優點：生命周期成本低、可維護性高
+    - 缺點：內存浪費嚴重、循環依賴性，組件模型圍繞 models 和 views 進行創建
 - Model View Presenter
     1. view 為"被動視圖"（Passive View），定義一個介面，並且實作出來
     2. presenter 視為在 View 與 Model 中間協調者，做出不同的反應與處理或者存取 Model 物件內的資料給 View 使用

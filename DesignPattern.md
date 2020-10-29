@@ -1,4 +1,5 @@
-# JavaScript Pattern
+# DesignPattern Pattern
+
 
 ## 1. MVC, MVP, MVVM
 - The difference is in way how data from model layer ends up in the view instances.
@@ -42,6 +43,21 @@
     ```
     
     ```
-## 3. Structural Patterns
-
-## 4. Behavioral Patterns
+- Singleton Pattern
+- Prototype Pattern
+## 3. Structural Patterns - 改變物件與物件之間的結構，在呼叫某個功能時，沒有篡改原先功能狀況下，取得新的功能
+- Adapter Pattern 
+- Composite Pattern
+- Decorator Pattern 
+- Façade Pattern
+- Flyweight Pattern 
+- Proxy Pattern)
+## 4. Behavioral Patterns - 改變使用物件的行為，在使用某功能時所呼叫的方法不同
+- Iterator Pattern
+- Template Pattern
+- Chain of Responsibility Pattern
+- Command Pattern 
+- Mediator Pattern
+- Observer Pattern
+- State Pattern
+- Strategy Pattern

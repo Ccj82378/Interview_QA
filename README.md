@@ -1,6 +1,7 @@
-# Interview_Q&A
-- 彙整、簡述製作作品時所了解到的概念及問題
-- 檔案包含HTML5、CSS3、JavaScript、Design Pattern、ReactJS 
+# LearningNote
+- Record the concepts and problems that I found
+- HTML5、CSS3、JavaScript、Design Pattern、ReactJS、Others
+- Build data structures and algorithms in the future 
 
 ## HTML5
 1. Attribute vs Property
@@ -52,7 +53,7 @@
 6. Flux & Redux
 7. React Router
 
-## Other
+## Others
 1. AJAX
 2. Cookie
 3. Single Page Application

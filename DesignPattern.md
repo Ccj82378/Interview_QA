@@ -21,8 +21,8 @@
 ![image](https://github.com/Ccj82378/LearningNote/blob/main/img/MVC_MPV_MVVM.png)
 
 ## 2. Creational Patterns - 藉由控制物件創建的流程來解決問題
-- Constructor Pattern
-    以類別為基底的創建型模式，一個特殊的function可以用來實例化新物件中所定義的方法與屬性
+- Factory Pattern
+    提供用於創建對象的通用接口，沒有明確要求使用構造函數
     ```
       class Factory {
         constructor() {
@@ -63,8 +63,56 @@
     console.log(myFord.buy()); // "You buy the ford."
     console.log(myDodge.sell()); // "You sell the Dodge."
     ```
+
 - Singleton Pattern
+    該實例的類別沒有存在任何實例化物件的話，則會創建一個新的實例並回傳它；但如果該實例已存在，則會回傳該實例的參考
+    ```
+    class Database {
+    constructor(data) {
+        if (Database.exists) {
+        return Database.instance;
+        }
+        this._data = data;
+        Database.instance = this;
+        Database.exists = true;
+        return this;
+    }
+    getData() {
+        return this._data;
+    }
+    setData(data) {
+        this._data = data;
+    }
+    }
+    // usage
+    const mongo = new Database(555);
+    console.log(mongo.getData()); // 555
+    
+    const A = new Database(55465455);
+    console.log(A.getData()); // 555
+    ```
+
 - Prototype Pattern
+    基於現有對象克隆模板來創建對象
+    ```
+    var myCar = {
+ 
+    name: "Ford Escort",
+    
+    drive: function () {
+        console.log( "Weeee. I'm driving!" );
+    },
+        panic: function () {
+            console.log( "Wait. How do you stop this thing?" );
+        }
+    };
+    
+    // Use Object.create to instantiate a new car
+    var yourCar = Object.create( myCar );
+    
+    // Now we can see that one is a prototype of the other
+    console.log( yourCar.name ); // "Ford Escort"
+    ```
 ## 3. Structural Patterns - 改變物件與物件之間的結構，在呼叫某個功能時，沒有篡改原先功能狀況下，取得新的功能
 - Adapter Pattern 
 - Composite Pattern

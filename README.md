@@ -1,17 +1,19 @@
 # Interview_Q&A
 - 彙整、簡述製作作品時所了解到的概念及問題
-- HTML_CSS, JavaScript, JavaScript Pattern, ReactJS 
-## Menu 
+- 檔案包含HTML5、CSS3、JavaScript、Design Pattern、ReactJS 
 
-### HTML、CSS
-1. Display:inline、block、inline-block
-2. Pseudo classes
-3. CSS Preprocessor
+## HTML5
+1. Attribute vs Property
+
+## CSS3
+1. CSS Specificity
+2. Display:inline、block、inline-block
+3. Pseudo classes
 4. Position
 5. Overflow
-6. CSS Specificity
+6. CSS Preprocessor
 
-### JavaScript
+## JavaScript
 1. Scope
 2. let、const、var
 3. Hoisting  
@@ -33,7 +35,7 @@
 19. slice()、splice()、split() 
 20. Immutable
 
-### JavaScript Pattern
+## Design Pattern
 1. MVC, MVP, MVVM
 2. Creational Patterns
     - Constructor Pattern
@@ -41,7 +43,7 @@
 3. Structural Patterns
 4. Behavioral Patterns
 
-### ReactJS
+## ReactJS
 1. 特性
 2. React,Angular,Vue
 3. Life Cycle 
@@ -50,7 +52,7 @@
 6. Flux & Redux
 7. React Router
 
-### Other
+## Other
 1. AJAX
 2. Cookie
 3. Single Page Application
